@@ -103,7 +103,9 @@ function format() {
 }
 
 function focusKeyboard() {
-  E("keyboard").focus();
+  E("keyboard").focus({
+    preventScroll: true
+  });
 }
 
 function sendSpotlight() {
