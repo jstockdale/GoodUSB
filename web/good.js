@@ -121,6 +121,11 @@ function sendNewTab() {
   focusKeyboard();
 }
 
+function sendRefresh() {
+  ws_send("press GUI r");
+  focusKeyboard();
+}
+
 function sendSwitchApp() {
   ws_send("press GUI TAB");
   focusKeyboard();
@@ -230,6 +235,7 @@ window.addEventListener("load", function() {
   E("spotlight").onclick = sendSpotlight;
   E("new").onclick = sendNew;
   E("new_tab").onclick = sendNewTab;
+  E("refresh").onclick = sendRefresh;
   E("switch_app").onclick = sendSwitchApp;
   E("switch_window").onclick = sendSwitchWindow;
   E("lock_mac").onclick = sendLockMac;
