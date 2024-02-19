@@ -247,11 +247,11 @@ window.addEventListener("load", function() {
   E("keyboard").addEventListener("keydown", handleInput);
   E("keyboard").focus();
 
-  // ! Make all <code>s append to the editor when clicked
+  // ! Make all <code>s send key when clicked
   var codes = document.querySelectorAll("code");
   for (var i = 0; i < codes.length; i++) {
     codes[i].addEventListener("click", function() {
-      append(this.innerHTML + " \n");
+      ws.send("press " + this.innerHTML + " \n");
     });
   }
 
