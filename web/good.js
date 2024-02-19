@@ -239,6 +239,7 @@ window.addEventListener("load", function() {
   E("ctrl_alt_del").onclick = sendCtrlAltDel;
 
   E("keyboard").addEventListener("keydown", handleInput);
+  E("keyboard").focus();
 
   // ! Make all <code>s append to the editor when clicked
   var codes = document.querySelectorAll("code");
