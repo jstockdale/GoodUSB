@@ -102,16 +102,68 @@ function format() {
   }
 }
 
+function sendSwitchApp() {
+  ws_send("press GUI TAB");
+}
+
+function sendSwitchWindow() {
+  ws_send("press GUI `");
+}
+
+function sendLockMac() {
+  ws_send("press CTRL GUI q");
+}
+
+function sendLockWin() {
+  ws_send("press GUI l");
+}
+
+function sendCtrlAltDel() {
+  ws_send("press CTRL ALT DELETE");
+}
+
+
 // ! handleInput script
 function handleInput(e) {
+  const valid_modifiers = ["Alt", "Control", "Meta", "Shift"];
+  const other_keys = {
+    "Enter": "ENTER",
+    "Menu": "MENU",
+    "App": "APP",
+    "Delete": "DELETE",
+    "Backspace": "BACKSPACE",
+    "Home": "HOME",
+    "Insert": "INSERT",
+    "PageUp": "PAGEUP",
+    "PageDown": "PAGEDOWN",
+    "ArrowUp": "UP",
+    "ArrowDown": "DOWN",
+    "ArrowRight": "RIGHT",
+    "ArrowLeft": "LEFT",
+    "Tab": "TAB",
+    "End": "END",
+    "Escape": "ESC",
+    "Space": "SPACE",
+    "Spacebar": "SPACE",
+    "Pause": "PAUSE",
+    "Break": "BREAK",
+    "CapsLock": "CAPSLOCK",
+    "NumLock": "NUMLOCK",
+    "PrintScreen": "PRINTSCREEN",
+    "ScrollLock": "SCROLLLOCK"
+  }
+  var input_key = valid_modifiers.includes(e.key) ? "" : (e.key == " " || e.code == "Space" || e.keyCode == 32) ? "SPACE" : e.key;
+  var re = new RegExp( Object.keys(other_keys).join("|"), "g");
+  input_key = input_key.replace(re, function(m) { return other_keys[m] }); 
   var modifiers = ""
   modifiers += e.altKey ? "ALT " : "";
   modifiers += e.ctrlKey ? "CTRL " : "";
-  modifiers += e.metaKey ? "META " : "";
+  modifiers += e.metaKey ? "GUI " : "";
   modifiers += e.shiftKey ? "SHIFT " : "";
-  console.log("input received keypress: " + modifiers + e.key);
-  E("editorinfo").innerHTML = "pressing " + modifiers + e.key;
-  ws_send("press \"" + modifiers + e.key + "\"", log_ws);
+  console.log("input received keypress: " + modifiers + input_key);
+  E("editorinfo").innerHTML = "pressing " + modifiers + input_key;
+  ws_send("press \"" + modifiers + input_key + "\"", log_ws);
+  e.preventDefault();
 }
 
 // ! Run script
@@ -140,6 +192,12 @@ window.addEventListener("load", function() {
   E("reconnect").onclick = ws_init;
   E("format").onclick = format;
   E("stop").onclick = stopAll;
+
+  E("switch_app").onclick = sendSwitchApp;
+  E("switch_window").onclick = sendSwitchWindow;
+  E("lock_mac").onclick = sendLockMac;
+  E("lock_win").onclick = sendLockWin;
+  E("ctrl_alt_del").onclick = sendCtrlAltDel;
 
   E("keyboard").addEventListener("keydown", handleInput);
 

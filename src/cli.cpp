@@ -231,39 +231,15 @@ namespace cli {
         /**
          * \brief Create press command
          *
-         * Starts executing a ducky script
+         * Press a single key plus modifiers
          *
-         * \param * Path to script in SPIFFS
+         * \param * Key combination to press
          */
         cli.addSingleArgCmd("press", [](cmd* c) {
             Command  cmd { c };
             Argument arg { cmd.getArg(0) };
 
-            String input = arg.getValue();
-            String command = "";
-            if (input == "Alt") {
-              // TODO: Fixme
-            } else if (input == "Ctrl") {
-              // TODO: Fixme
-            } else if (input == "Meta") {
-              // TODO: Fixme
-            } else if (input == "Shift") {
-              // TODO: Fixme
-            } else if (input == "Backspace") {
-              command = "BACKSPACE";
-            } else if (input == "Enter") {
-              command = "ENTER";
-            } else if (input == "ArrowUp") {
-              command = "UP";
-            } else if (input == "ArrowDown") {
-              command = "DOWN";
-            } else if (input == "ArrowLeft") {
-              command = "LEFT";
-            } else if (input == "ArrowRight") {
-              command = "RIGHT";
-            } else {
-              command = "STRING " + input;
-            }
+            String command = arg.getValue();
             command += "\n";
             const int length = command.length();
             char* cmd_array = new char[length + 1];
@@ -274,6 +250,28 @@ namespace cli {
             print(response);
         });
 
+        /**
+         * \brief Create type command
+         *
+         * Type a single string without modifiers
+         *
+         * \param * String to type
+         */
+        cli.addSingleArgCmd("type", [](cmd* c) {
+            Command  cmd { c };
+            Argument arg { cmd.getArg(0) };
+
+            String command = "";
+            command = "STRING " + arg.getValue();
+            command += "\n";
+            const int length = command.length();
+            char* cmd_array = new char[length + 1];
+            strcpy(cmd_array, command.c_str());
+            duckparser::parse(cmd_array, length);
+
+            String response = "> typing \"" + arg.getValue() + "\"";
+            print(response);
+        });
         /**
          * \brief Create run command
          *
