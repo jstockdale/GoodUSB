@@ -363,3 +363,13 @@ To make sure we can keep working on free and open-source projects like this,
 Visit [spacehuhn.com](https://spacehuhn.com) to learn more about us. :chicken:
 
 <a href='https://ko-fi.com/G2G75FA4V' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
+## Support SuperWiFiDuck
+
+Thanks to [wasdwasd0105](https://github.com/wasdwasd0105) for making SuperWiFiDuck and ESP32S3-USB-to-BLE-Keyboard
+
+If anyone knows how to show wasdwasd0105 support please contact me. Attribution is the best I can do from the info I have. :-)
+
+## GoodUSB
+
+This is a work in progress. Please standby while we make planned improvements to this codebase.
