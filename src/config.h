@@ -29,12 +29,16 @@
 #define BOOT_MAGIC_NUM    1234567890
 
 /*! ===== WiFi Settings ===== */
-#define WIFI_SSID "wifiduck"
-#define WIFI_PASSWORD "wifiduck"
+#define WIFI_SSID "ESP32"
+#define WIFI_PASSWORD "accessESP32+42"
 #define WIFI_CHANNEL "1"
 
 #define HOSTNAME "wifiduck"
 #define URL "wifi.duck"
 
-
+/*! ===== USB Settings ===== */
+#define USB_MFR	"Apple Inc."
+#define USB_PRD	"Apple S3 Keyboard"
+#define USB_VID	0x05ac
+#define USB_PID	0x026c
 

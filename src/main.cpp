@@ -14,6 +14,11 @@
 void setup() {
     debug_init();
     duckparser::beginKeyboard();
+    USB.VID(USB_VID);
+    USB.PID(USB_PID);
+    USB.manufacturerName(USB_MFR);
+    USB.productName(USB_PRD);
+//    USB.serialNumber(USB_SN);
     USB.begin();
     delay(200);
     spiffs::begin();

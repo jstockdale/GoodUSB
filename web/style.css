@@ -455,8 +455,11 @@ input, button {
 	border-radius: 4px;
 	background: #2f3136;
 	letter-spacing: .1rem;
-	text-transform: uppercase;
 	margin: 2px 0;
+}
+
+button {
+	text-transform: uppercase;
 }
 
 input:hover, button:hover {

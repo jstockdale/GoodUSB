@@ -19,6 +19,7 @@
 
 // Import modules used for different commands
 #include "spiffs.h"
+#include "duckparser.h"
 #include "duckscript.h"
 #include "settings.h"
 #include "config.h"
@@ -225,6 +226,52 @@ namespace cli {
                 }
                 print(buffer);
             }
+        });
+
+        /**
+         * \brief Create press command
+         *
+         * Starts executing a ducky script
+         *
+         * \param * Path to script in SPIFFS
+         */
+        cli.addSingleArgCmd("press", [](cmd* c) {
+            Command  cmd { c };
+            Argument arg { cmd.getArg(0) };
+
+            String input = arg.getValue();
+            String command = "";
+            if (input == "Alt") {
+              // TODO: Fixme
+            } else if (input == "Ctrl") {
+              // TODO: Fixme
+            } else if (input == "Meta") {
+              // TODO: Fixme
+            } else if (input == "Shift") {
+              // TODO: Fixme
+            } else if (input == "Backspace") {
+              command = "BACKSPACE";
+            } else if (input == "Enter") {
+              command = "ENTER";
+            } else if (input == "ArrowUp") {
+              command = "UP";
+            } else if (input == "ArrowDown") {
+              command = "DOWN";
+            } else if (input == "ArrowLeft") {
+              command = "LEFT";
+            } else if (input == "ArrowRight") {
+              command = "RIGHT";
+            } else {
+              command = "STRING " + input;
+            }
+            command += "\n";
+            const int length = command.length();
+            char* cmd_array = new char[length + 1];
+            strcpy(cmd_array, command.c_str());
+            duckparser::parse(cmd_array, length);
+
+            String response = "> pressing \"" + arg.getValue() + "\"";
+            print(response);
         });
 
         /**
