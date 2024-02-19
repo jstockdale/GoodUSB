@@ -245,13 +245,14 @@ window.addEventListener("load", function() {
   E("ctrl_alt_del").onclick = sendCtrlAltDel;
 
   E("keyboard").addEventListener("keydown", handleInput);
-  E("keyboard").focus();
+  focusKeyboard();
 
   // ! Make all <code>s send key when clicked
   var codes = document.querySelectorAll("code");
   for (var i = 0; i < codes.length; i++) {
     codes[i].addEventListener("click", function() {
       ws.send("press " + this.innerHTML + "\n");
+      focusKeyboard();
     });
   }
 
