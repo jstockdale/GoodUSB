@@ -72,7 +72,7 @@ function append(str) {
   E("editor").value += str;
 }
 
-// ! Updates file list and memory usage
+// ! Updates memory usage
 function update_file_list() {
   ws_send("mem", function(msg) {
     var lines = msg.split(/\n/);
@@ -251,7 +251,7 @@ window.addEventListener("load", function() {
   var codes = document.querySelectorAll("code");
   for (var i = 0; i < codes.length; i++) {
     codes[i].addEventListener("click", function() {
-      ws.send("press " + this.innerHTML + " \n");
+      ws.send("press " + this.innerHTML + " \n", (result) => { console.log(result); });
     });
   }
 
