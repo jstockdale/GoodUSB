@@ -29,12 +29,12 @@
 #define BOOT_MAGIC_NUM    1234567890
 
 /*! ===== WiFi Settings ===== */
-#define WIFI_SSID "ESP32"
+#define WIFI_SSID "GoodUSB"
 #define WIFI_PASSWORD "accessESP32+42"
 #define WIFI_CHANNEL "1"
 
-#define HOSTNAME "wifiduck"
-#define URL "wifi.duck"
+#define HOSTNAME "goodusb"
+#define URL "good.duck"
 
 /*! ===== USB Settings ===== */
 #define USB_MFR	"Apple Inc."

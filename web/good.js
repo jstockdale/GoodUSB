@@ -102,44 +102,58 @@ function format() {
   }
 }
 
+function focusKeyboard() {
+  E("keyboard").focus();
+}
+
 function sendSpotlight() {
   ws_send("press GUI SPACE");
+  focusKeyboard();
 }
 
 function sendNew() {
   ws_send("press GUI n");
+  focusKeyboard();
 }
 
 function sendNewTab() {
   ws_send("press GUI t");
+  focusKeyboard();
 }
 
 function sendSwitchApp() {
   ws_send("press GUI TAB");
+  focusKeyboard();
 }
 
 function sendSwitchWindow() {
   ws_send("press GUI `");
+  focusKeyboard();
 }
 
 function sendLockMac() {
   ws_send("press CTRL GUI q");
+  focusKeyboard();
 }
 
 function sendLockWin() {
   ws_send("press GUI l");
+  focusKeyboard();
 }
 
 function sendCloseWindow() {
   ws_send("press GUI w");
+  focusKeyboard();
 }
 
 function sendQuitProgram() {
   ws_send("press GUI q");
+  focusKeyboard();
 }
 
 function sendCtrlAltDel() {
   ws_send("press CTRL ALT DELETE");
+  focusKeyboard();
 }
 
 
