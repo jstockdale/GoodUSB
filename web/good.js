@@ -106,6 +106,14 @@ function sendSpotlight() {
   ws_send("press GUI SPACE");
 }
 
+function sendNew() {
+  ws_send("press GUI n");
+}
+
+function sendNewTab() {
+  ws_send("press GUI t");
+}
+
 function sendSwitchApp() {
   ws_send("press GUI TAB");
 }
@@ -120,6 +128,14 @@ function sendLockMac() {
 
 function sendLockWin() {
   ws_send("press GUI l");
+}
+
+function sendCloseWindow() {
+  ws_send("press GUI w");
+}
+
+function sendQuitProgram() {
+  ws_send("press GUI q");
 }
 
 function sendCtrlAltDel() {
@@ -198,10 +214,14 @@ window.addEventListener("load", function() {
   E("stop").onclick = stopAll;
 
   E("spotlight").onclick = sendSpotlight;
+  E("new").onclick = sendNew;
+  E("new_tab").onclick = sendNewTab;
   E("switch_app").onclick = sendSwitchApp;
   E("switch_window").onclick = sendSwitchWindow;
   E("lock_mac").onclick = sendLockMac;
   E("lock_win").onclick = sendLockWin;
+  E("close").onclick = sendCloseWindow;
+  E("quit").onclick = sendQuitProgram;
   E("ctrl_alt_del").onclick = sendCtrlAltDel;
 
   E("keyboard").addEventListener("keydown", handleInput);
