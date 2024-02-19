@@ -102,6 +102,10 @@ function format() {
   }
 }
 
+function sendSpotlight() {
+  ws_send("press GUI SPACE");
+}
+
 function sendSwitchApp() {
   ws_send("press GUI TAB");
 }
@@ -193,6 +197,7 @@ window.addEventListener("load", function() {
   E("format").onclick = format;
   E("stop").onclick = stopAll;
 
+  E("spotlight").onclick = sendSpotlight;
   E("switch_app").onclick = sendSwitchApp;
   E("switch_window").onclick = sendSwitchWindow;
   E("lock_mac").onclick = sendLockMac;
