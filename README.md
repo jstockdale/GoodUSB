@@ -1,4 +1,4 @@
-# Super WiFi Duck
+# GoodUSB
 
 <p align="center">
 <img alt="WiFi Duck Logo" src="img/thumbnail.jpg" width="640">
@@ -7,8 +7,6 @@
 This project upgrades from WiFi Duck and utilizes the native USB function of ESP32 S2/3 chip. As a result, you can run WiFi Duck with a default module below 10$, and no special hardware work is required.
 
 ESP32 S2/3 can emulate multiple USB devices at the same time. So I want to add USB mouse and USB disk function in the future. But it depends on how much time/money I have.
-
-Please help me to build more projects! [paypal](https://www.paypal.com/donate/?business=UZAK3WFV233ML&no_recurring=0&item_name=Help+me+build+more+project%21&currency_code=USD)
 
 Please read the install and flash parts below. They are different from the original project. 
 
@@ -21,7 +19,7 @@ Video Demo:
 
 ---
 
-- [Super WiFi Duck](#super-wifi-duck)
+- [GoodUSB](#goodusb)
   - [About](#about)
   - [Usage](#usage)
   - [Flash ESP32 S2/S3](#flash-esp32-s2s3)
@@ -368,7 +366,10 @@ Visit [spacehuhn.com](https://spacehuhn.com) to learn more about us. :chicken:
 
 Thanks to [wasdwasd0105](https://github.com/wasdwasd0105) for making SuperWiFiDuck and ESP32S3-USB-to-BLE-Keyboard
 
-If anyone knows how to show wasdwasd0105 support please contact me. Attribution is the best I can do from the info I have. :-)
+You can support wasdwasd0105 via PayPal! [paypal](https://www.paypal.com/donate/?business=UZAK3WFV233ML&no_recurring=0&item_name=Help+me+build+more+project%21&currency_code=USD)
+
+Open source software only exists because of you!! Support the cause.
+
 
 ## GoodUSB
 
