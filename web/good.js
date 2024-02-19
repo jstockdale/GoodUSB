@@ -251,7 +251,7 @@ window.addEventListener("load", function() {
   var codes = document.querySelectorAll("code");
   for (var i = 0; i < codes.length; i++) {
     codes[i].addEventListener("click", function() {
-      ws.send("press " + this.innerHTML + " \n", (result) => { console.log(result); });
+      ws.send("press " + this.innerHTML + "\n");
     });
   }
 
