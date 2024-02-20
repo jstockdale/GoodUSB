@@ -134,7 +134,8 @@ function ws_init() {
   ws.onmessage = function(event) {
     var msg = event.data;
 
-    log_ws(msg);
+    // ws_callback is already log_ws
+    //log_ws(msg);
 
     if (ws_callback && msg.length > 0) {
       ws_callback(msg);
