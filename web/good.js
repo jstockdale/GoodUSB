@@ -109,57 +109,57 @@ function focusKeyboard() {
 }
 
 function sendSpotlight() {
-  ws_send("press GUI SPACE");
+  ws_send("press GUI SPACE", log_ws);
   focusKeyboard();
 }
 
 function sendNew() {
-  ws_send("press GUI n");
+  ws_send("press GUI n", log_ws);
   focusKeyboard();
 }
 
 function sendNewTab() {
-  ws_send("press GUI t");
+  ws_send("press GUI t", log_ws);
   focusKeyboard();
 }
 
 function sendRefresh() {
-  ws_send("press GUI r");
+  ws_send("press GUI r", log_ws);
   focusKeyboard();
 }
 
 function sendSwitchApp() {
-  ws_send("press GUI TAB");
+  ws_send("press GUI TAB", log_ws);
   focusKeyboard();
 }
 
 function sendSwitchWindow() {
-  ws_send("press GUI `");
+  ws_send("press GUI `", log_ws);
   focusKeyboard();
 }
 
 function sendLockMac() {
-  ws_send("press CTRL GUI q");
+  ws_send("press CTRL GUI q", log_ws);
   focusKeyboard();
 }
 
 function sendLockWin() {
-  ws_send("press GUI l");
+  ws_send("press GUI l", log_ws);
   focusKeyboard();
 }
 
 function sendCloseWindow() {
-  ws_send("press GUI w");
+  ws_send("press GUI w", log_ws);
   focusKeyboard();
 }
 
 function sendQuitProgram() {
-  ws_send("press GUI q");
+  ws_send("press GUI q", log_ws);
   focusKeyboard();
 }
 
 function sendCtrlAltDel() {
-  ws_send("press CTRL ALT DELETE");
+  ws_send("press CTRL ALT DELETE", log_ws);
   focusKeyboard();
 }
 
@@ -223,6 +223,11 @@ function stopAll() {
   ws_send("stop", log_ws, true);
 }
 
+function wakeUsb() {
+  ws_send("wake_usb", log_ws);
+  focusKeyboard();
+}
+
 // ! Function that is called once the websocket connection was established
 function ws_connected() {
   update_file_list();
@@ -233,6 +238,7 @@ window.addEventListener("load", function() {
   E("reconnect").onclick = ws_init;
   E("format").onclick = format;
   E("stop").onclick = stopAll;
+  E("wake_usb").onclick = wakeUsb;
 
   E("spotlight").onclick = sendSpotlight;
   E("new").onclick = sendNew;

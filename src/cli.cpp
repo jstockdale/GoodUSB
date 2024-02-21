@@ -21,6 +21,7 @@
 #include "spiffs.h"
 #include "duckparser.h"
 #include "duckscript.h"
+#include "driver/gpio.h"
 #include "settings.h"
 #include "config.h"
 
@@ -226,6 +227,38 @@ namespace cli {
                 }
                 print(buffer);
             }
+        });
+
+        /**
+         * \brief Create wake_usb command
+         *
+         * Pull D+ and D- to ground to wake usb
+         *
+         * \param * Key combination to press
+         */
+        cli.addSingleArgCmd("wake_usb", [](cmd* c) {
+            // set GPIO to output, low
+            // wait a few milliconds
+            // then set GPIO to input again
+            gpio_reset_pin(GPIO_NUM_0);
+            gpio_reset_pin(GPIO_NUM_1);
+            gpio_reset_pin(GPIO_NUM_10);
+            gpio_set_direction(GPIO_NUM_0, GPIO_MODE_OUTPUT);
+            gpio_set_direction(GPIO_NUM_1, GPIO_MODE_OUTPUT);
+            gpio_set_direction(GPIO_NUM_10, GPIO_MODE_OUTPUT);
+            gpio_set_level(GPIO_NUM_0, 0);
+            gpio_set_level(GPIO_NUM_1, 0);
+            gpio_set_level(GPIO_NUM_10, 0);
+            vTaskDelay(100 / portTICK_PERIOD_MS);
+            gpio_set_direction(GPIO_NUM_0, GPIO_MODE_INPUT);
+            gpio_set_direction(GPIO_NUM_1, GPIO_MODE_INPUT);
+            gpio_set_direction(GPIO_NUM_10, GPIO_MODE_INPUT);
+            gpio_reset_pin(GPIO_NUM_0);
+            gpio_reset_pin(GPIO_NUM_1);
+            gpio_reset_pin(GPIO_NUM_10);
+            
+            String response = "> woke usb";
+            print(response);
         });
 
         /**
