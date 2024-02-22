@@ -1,8 +1,35 @@
 # GoodUSB
 
 <p align="center">
-<img alt="WiFi Duck Logo" src="img/thumbnail.jpg" width="640">
+<img alt="GoodUSB Logo" src="img/GoodUSB.png" width="800">
 </p>
+
+# GoodUSB: Transforming Connectivity, Enhancing Security
+
+Welcome to GoodUSB, where we're redefining the way you connect with your devices. Born from the legacy of BadUSB, GoodUSB is not just an evolution; it's a revolution in wireless device interaction. Utilizing the power and versatility of the ESP32-S3, equipped with Bluetooth, Wi-Fi, and a comprehensive USB stack, we're turning the tables on traditional device control. GoodUSB is your gateway to a new era of secure, wireless interaction with any USB host device.
+
+## The Vision
+
+Imagine controlling your Raspberry Pi, Steam Deck, Mac computer, or any device requiring direct keyboard input without the need for a physical keyboard. GoodUSB materializes this vision. It's more than a project; it's a movement towards creating a more accessible, efficient, and secure way of managing your devices. With GoodUSB, your smartphone or computer becomes a universal remote control, bringing unprecedented convenience into your hands.
+
+## Beyond Convenience: Security at Its Core
+
+GoodUSB is designed with your security as the top priority. Incorporating WPA2, SSL, and robust authentication mechanisms, we ensure that your devices remain secure while offering the flexibility of remote access. GoodUSB transforms the notorious capabilities of BadUSB into a force for good, enabling safe and secure control over your devices.
+
+## Feature Highlights
+
+- **Wireless Keyboard and Mouse**: Turn any Wi-Fi-capable device into a virtual keyboard and mouse, extending the command set of websocket parsing Duckyscript to include "type" and "press" commands.
+- **Universal Compatibility**: Whether it's a Raspberry Pi without its own keyboard, a Steam Deck, or a Mac computer requiring direct input for actions like unlocking, GoodUSB connects seamlessly.
+- **Advanced Security**: With WPA2, SSL, and strong authentication, GoodUSB ensures a secure link to your devices, protecting against unauthorized access.
+- **Open Source and Community-Driven**: GoodUSB is built by the community, for the community. We're committed to transparency, innovation, and continuously enhancing user experience.
+
+## Join the GoodUSB Movement
+
+GoodUSB is more than a tool; it's a community of innovators, tinkerers, and security enthusiasts dedicated to making device interaction more accessible and secure. We invite you to join us in this journey. Whether you're looking to contribute code, share ideas, or simply use GoodUSB in your projects, your participation is what makes GoodUSB truly good.
+
+Stay tuned for updates on mouse support, Bluetooth connectivity, and more features that will take your GoodUSB experience to the next level.
+
+---
 
 This project upgrades from WiFi Duck and utilizes the native USB function of ESP32 S2/3 chip. As a result, you can run WiFi Duck with a default module below 10$, and no special hardware work is required.
 
@@ -11,11 +38,6 @@ ESP32 S2/3 can emulate multiple USB devices at the same time. So I want to add U
 Please read the install and flash parts below. They are different from the original project. 
 
 Want to learn more about BadUSBs? Check out WIFIDuck's online course: [learnbadusb.com](https://learnbadusb.com) 
-
-Video Demo:
-<p align="center">
-<img alt="WiFi Duck Demo" src="img/demo.gif" width="320">
-</p>
 
 ---
 
