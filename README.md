@@ -2,8 +2,7 @@
 <img alt="GoodUSB Logo" src="img/GoodUSB.png" width="800">
 </p>
 
-# GoodUSB
-## Transforming Connectivity, Enhancing Security
+# GoodUSB: Transforming Connectivity, Enhancing Security
 
 Welcome to GoodUSB, where we're redefining the way you connect with your devices. Born from the legacy of BadUSB, GoodUSB is not just an evolution; it's a revolution in wireless device interaction. Utilizing the power and versatility of the ESP32-S3, equipped with Bluetooth, Wi-Fi, and a comprehensive USB stack, we're turning the tables on traditional device control. GoodUSB is your gateway to a new era of secure, wireless interaction with any USB host device.
 
