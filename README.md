@@ -10,15 +10,12 @@ Welcome to GoodUSB, where we're redefining the way you connect with your devices
 
 Imagine controlling your Raspberry Pi, Steam Deck, Mac computer, or any device requiring direct keyboard input without the need for a physical keyboard. GoodUSB materializes this vision. It's more than a project; it's a movement towards creating a more accessible, efficient, and secure way of managing your devices. With GoodUSB, your smartphone or computer becomes a universal remote control, bringing unprecedented convenience into your hands.
 
-## Beyond Convenience: Security at Its Core
-
-GoodUSB is designed with your security as the top priority. Incorporating WPA2, SSL, and robust authentication mechanisms, we ensure that your devices remain secure while offering the flexibility of remote access. GoodUSB transforms the notorious capabilities of BadUSB into a force for good, enabling safe and secure control over your devices.
+GoodUSB transforms the notorious capabilities of BadUSB into a force for good, enabling safe and secure control over your devices.
 
 ## Feature Highlights
 
 - **Wireless Keyboard and Mouse**: Turn any Wi-Fi-capable device into a virtual keyboard and mouse, extending the command set of websocket parsing Duckyscript to include "type" and "press" commands.
 - **Universal Compatibility**: Whether it's a Raspberry Pi without its own keyboard, a Steam Deck, or a Mac computer requiring direct input for actions like unlocking, GoodUSB connects seamlessly.
-- **Advanced Security**: With WPA2, SSL, and strong authentication, GoodUSB ensures a secure link to your devices, protecting against unauthorized access.
 - **Open Source and Community-Driven**: GoodUSB is built by the community, for the community. We're committed to transparency, innovation, and continuously enhancing user experience.
 
 ## Join the GoodUSB Movement
